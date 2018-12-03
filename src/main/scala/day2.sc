@@ -9,3 +9,4 @@ part1.count(_==2) * part1.count(_==3)
 //part2
 val allPairs = lines.flatMap(x => lines.map(y => (x, y)))
 val goodPair = allPairs.map(b => (b, b._1.zip(b._2).toList.filterNot(c => c._1.equals(c._2)).length)).filter(_._2==1).head._1
+goodPair._1.zip(goodPair._2).filter(c => c._1.equals(c._2)).map(_._2.toString).toList.mkString
